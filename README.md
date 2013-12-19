@@ -8,7 +8,7 @@ status](https://secure.travis-ci.org/watson/roundround.png)](http://travis-ci.or
 ## Install
 
 ```
-npm install mongohooks
+npm install roundround
 ```
 
 ## Usage
