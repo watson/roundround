@@ -14,20 +14,20 @@ npm install roundround
 ## Usage
 
 ```javascript
-var RoundRound = require('roundround');
+var roundround = require('roundround');
 
 // Initialize RoundRound with any Array (null or undefined are ok as well, so no
 // guards necessary)
-var rr = new RoundRound([1,2,3]);
+var rr = roundround([1,2,3]);
 
-// Then call `.next()` to get the next element in the array
-rr.next(); // => 1
-rr.next(); // => 2
-rr.next(); // => 3
+// Then call the result to get the next element in the array
+rr(); // => 1
+rr(); // => 2
+rr(); // => 3
 
 // When reaching the end of the internal array, the iterator starts over from
 // the beginning
-rr.next(); // => 1
+rr(); // => 1
 ```
 
 ## License
