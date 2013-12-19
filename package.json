@@ -1,0 +1,25 @@
+{
+  "name": "roundround",
+  "version": "0.1.0",
+  "description": "A dead simple round-robin array iterator",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/watson/roundround.git"
+  },
+  "keywords": [
+    "array",
+    "roundrobin",
+    "iterate",
+    "iterator"
+  ],
+  "author": "Thomas Watson Steen <w@tson.dk>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/watson/roundround/issues"
+  },
+  "homepage": "https://github.com/watson/roundround"
+}
