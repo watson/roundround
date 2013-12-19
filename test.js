@@ -1,24 +1,23 @@
 'use strict';
 
 var assert = require('assert');
-var RoundRound = require('./index');
+var roundround = require('./index');
+var rr;
 
-var instance = new RoundRound([1,2,3]);
-assert(instance.next() === 1, 'First call should return the first element');
-assert(instance.next() === 2, 'Second call should return the second element');
-assert(instance.next() === 3, 'Third call should return the third element');
-assert(instance.next() === 1, 'Fourth call should return the first element');
+var rr = roundround([1,2,3]);
+assert(rr() === 1, 'First call should return the first element');
+assert(rr() === 2, 'Second call should return the second element');
+assert(rr() === 3, 'Third call should return the third element');
+assert(rr() === 1, 'Fourth call should return the first element');
 
-assert(RoundRound() instanceof RoundRound, 'Forgetting the new keyword should not be a problem');
+var empty = roundround();
+assert(empty() === undefined, 'An empty RoundRound instance should just return undefined');
 
-var empty = new RoundRound();
-assert(empty.next() === undefined, 'An empty RoundRound instance should just return undefined');
+var undef = roundround(undefined);
+assert(undef() === undefined, 'A instance initialized with `undefined` should just return undefined');
 
-var undef = new RoundRound(undefined);
-assert(undef.next() === undefined, 'A instance initialized with `undefined` should just return undefined');
+var nil = roundround(null);
+assert(nil() === undefined, 'A instance initialized with `null` should just return undefined');
 
-var nil = new RoundRound(null);
-assert(nil.next() === undefined, 'A instance initialized with `null` should just return undefined');
-
-var nonArray = function () { new RoundRound({}); };
+var nonArray = function () { roundround({}); };
 assert.throws(nonArray, 'Trying to initialize RoundRound with a non-array should throw an Error');

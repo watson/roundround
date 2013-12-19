@@ -1,18 +1,15 @@
 'use strict';
 
-var RoundRound = function (array) {
-  if (!(this instanceof RoundRound))
-    return new RoundRound(array);
-  if (array !== undefined && array !== null && !Array.isArray(array))
+module.exports = function (array) {
+  var index = 0;
+
+  if (array === undefined || array === null)
+    array = [];
+  else if (!Array.isArray(array))
     throw new Error('Expecting argument to RoundRound to be an Array');
-  this._array = array || [];
-  this._index = 0;
-};
 
-RoundRound.prototype.next = function () {
-  if (this._index >= this._array.length)
-    this._index = 0;
-  return this._array[this._index++];
+  return function () {
+    if (index >= array.length) index = 0;
+    return array[index++];
+  };
 };
-
-module.exports = RoundRound;
