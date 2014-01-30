@@ -10,6 +10,9 @@ assert(rr() === 2, 'Second call should return the second element');
 assert(rr() === 3, 'Third call should return the third element');
 assert(rr() === 1, 'Fourth call should return the first element');
 
+var rr = roundround([1,2,3], 1);
+assert(rr() === 2, 'Give an optinal start-index, and the first call should return that element');
+
 var empty = roundround();
 assert(empty() === undefined, 'An empty RoundRound instance should just return undefined');
 
