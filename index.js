@@ -1,7 +1,7 @@
 'use strict';
 
-module.exports = function (array) {
-  var index = 0;
+module.exports = function (array, index) {
+  index = index || 0;
 
   if (array === undefined || array === null)
     array = [];
