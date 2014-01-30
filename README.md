@@ -28,6 +28,10 @@ rr(); // => 3
 // When reaching the end of the internal array, the iterator starts over from
 // the beginning
 rr(); // => 1
+
+// You can also specify an index from where RoundRound should start
+var rr = roundround([1,2,3], 1);
+rr(); // => 2
 ```
 
 ## License
